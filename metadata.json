@@ -1,0 +1,8 @@
+{
+  "name": "Porch",
+  "description": "A private messenger for friends and family with invite-only rooms, voice notes, and admin controls.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porch — private chat for friends &amp; family</title>
+    <meta name="description" content="Porch is an invite-only messenger for the people you actually call family. Group chats, voice notes, and an admin panel that keeps strangers out." />
+    <meta property="og:title" content="Porch — private chat for friends &amp; family" />
+    <meta property="og:description" content="Porch is an invite-only messenger for the people you actually call family. Group chats, voice notes, and an admin panel that keeps strangers out." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;family=Figtree:wght@400..700&amp;display=swap" />
+    <link rel="stylesheet" href="/index-buu8ywqv.css" />
+    <link rel="icon" href="/favicon.ico" />
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (saved === 'dark' || (!saved && prefersDark)) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+          }
+        } catch(e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <script>
+      window.$_TSR = window.$_TSR || { h: function() {} };
+      // Safely mount dark mode toggle after React hydration completes
+      window.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          if (document.getElementById('porch-theme-btn')) return;
+          var btn = document.createElement('button');
+          btn.id = 'porch-theme-btn';
+          btn.type = 'button';
+          btn.setAttribute('aria-label', 'Toggle dark mode theme');
+          btn.style.cssText = 'position:fixed;bottom:1.25rem;right:1.25rem;z-index:9999;display:flex;align-items:center;gap:0.4rem;padding:0.5rem 0.85rem;border-radius:9999px;font-size:0.8125rem;font-weight:600;cursor:pointer;border:1px solid rgba(140,140,140,0.3);background:var(--card,#ffffff);color:var(--foreground,#111827);box-shadow:0 4px 14px rgba(0,0,0,0.15);transition:all 0.2s ease;backdrop-filter:blur(8px);';
+          
+          function updateBtn() {
+            var isDark = document.documentElement.classList.contains('dark');
+            btn.innerHTML = (isDark ? '☀️ ' : '🌙 ') + (isDark ? 'Light' : 'Dark');
+          }
+          updateBtn();
+
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var isDark = document.documentElement.classList.contains('dark');
+            if (isDark) {
+              document.documentElement.classList.remove('dark');
+              document.documentElement.classList.add('light');
+              try { localStorage.setItem('theme', 'light'); } catch(err) {}
+            } else {
+              document.documentElement.classList.add('dark');
+              document.documentElement.classList.remove('light');
+              try { localStorage.setItem('theme', 'dark'); } catch(err) {}
+            }
+            updateBtn();
+          });
+          document.body.appendChild(btn);
+        }, 300);
+      });
+    </script>
+    <script type="module" src="/index-C3yFUP2L.js"></script>
+  </body>
+</html>
